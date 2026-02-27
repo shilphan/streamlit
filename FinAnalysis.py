@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+import streamlit as st   # add at top with other imports, the rest at the bottom
 
 def fetch_data(tickers, start_date, end_date):
     data_frames = []
@@ -10,9 +11,6 @@ def fetch_data(tickers, start_date, end_date):
     data = pd.concat(data_frames, axis=1, keys=tickers)
     data.columns = tickers
     return data
-
-
-import streamlit as st   # add at top with other imports, the rest at the bottom
 
 st.title("Financial Analysis Web App")
 
